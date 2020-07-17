@@ -1,0 +1,53 @@
+{
+  "name": "table-generator",
+  "version": "0.0.1",
+  "description": "",
+  "private": false,
+  "bin": {
+    "table-generator": "bin/table-generator"
+  },
+  "scripts": {
+    "format": "prettier --write **/*.{js,json} && standard --fix",
+    "lint": "standard",
+    "test": "jest",
+    "watch": "jest --watch",
+    "snapupdate": "jest --updateSnapshot",
+    "coverage": "jest --coverage"
+  },
+  "files": [
+    "src",
+    "bin"
+  ],
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "gluegun": "latest",
+    "html-docx-js": "^0.3.1",
+    "inquirer": "^7.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^24.1.0",
+    "prettier": "^1.12.1",
+    "standard": "^12.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintIgnore": [
+    "*.test.js"
+  ]
+}
