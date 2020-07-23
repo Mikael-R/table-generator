@@ -5,4 +5,4 @@ Windows Registry Editor Version 5.00
 "Icon"="C:\\Program Files\\table-generator\\app.ico"
 
 [HKEY_CLASSES_ROOT\Directory\Background\shell\table-generator\command]
-@="\"C:\\Program Files\\table-generator\\bin\\table-generator\" \"%v.\""
+@="\"C:\\Program Files\\table-generator\\bin\\executable.exe\" \"%v.\""

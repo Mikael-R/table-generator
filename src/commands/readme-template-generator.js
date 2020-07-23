@@ -6,9 +6,10 @@ module.exports = {
       message,
       generateFile,
       removeFiles,
-      replaceAll
+      replaceAll,
+      parameters
     } = toolbox
-    require('dotenv/config')
+    const { resolve } = require('path')
     const { readFile, writeFile } = require('fs')
     const { asBlob: convertToDocx } = require('html-docx-js')
 
@@ -90,7 +91,9 @@ module.exports = {
 
     readFile('table-cache.html', 'utf8', (_err, contents) => {
       const convertedAsDocx = convertToDocx(contents)
-      const target = replaceAll((process.env.DIR_TARGET || '') + `tabela_${days[0].day}_${days[5].day}.docx`, ['/'], '-')
+
+      const fileName = replaceAll(`tabela_${days[0].day}_${days[5].day}.docx`, ['/'], '-')
+      const target = resolve(parameters.first, fileName)
 
       writeFile(target, convertedAsDocx, (err) => {
         err ? console.log(err) : removeFiles(['table-cache.html'])
